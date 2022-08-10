@@ -5,13 +5,12 @@ for i in range(n):
     n = int(input())
     li = []
     li2 = []
-
     for j in range(1, n+1):
         li.append(j)
-        li2.append(0)
-    for s in range(1,k):
+    for s in range(k):
         for x in range(1,n+1):
-            li2[x] = sum(li[::x])
+            li2.append(sum(li[:x]))
         li = li2[:]
-    print(li)
+        li2=[]
+    print(li[-1])
 
