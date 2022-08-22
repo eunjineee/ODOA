@@ -4,7 +4,7 @@ for t in range(1,11):
     adjlist = [[] for _ in range(100)]
     a = 0
     b=1
-    s, g =0, 99
+    s, g = 0, 99
     for _ in range(len(adj)//2):
         adjlist[adj[a]].append(adj[b])
         a += 2
