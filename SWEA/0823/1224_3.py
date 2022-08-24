@@ -1,7 +1,6 @@
 for t in range(10):
     stack = []
     nums = []
-    a = int(input())
     li = list(input())
     for i in li:
         if i == '(':
@@ -55,12 +54,10 @@ for t in range(10):
             else:
                 total.append(int(j))
         except:
-            print(f'#{t + 1} ', end='')
-            print("error")
+            ans = "ROCK"
             break
-    print(f'#{t + 1} ', end='')
     if len(total) == 1:
-        print(total[0])
+        ans = total[0]
     else:
-        print("error")
-        break
+        ans = "ROCK"
+    print(ans)
