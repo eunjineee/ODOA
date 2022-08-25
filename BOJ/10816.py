@@ -1,14 +1,13 @@
-from collections import deque
-
 N = int(input())
-note1 = deque(map(int,input().split()))
+note1 = list(map(int,input().split()))
 M = int(input())
-note2 = deque(map(int, input().split()))
-total = [0] * M
-for i in note1:
-    for j in range(M):
-        if i == note2[j]:
-            total[j] += 1
+note2 = list(map(int, input().split()))
+new_dict = {}
 
-print(*total)
-            
+for num in note2:
+    if num in new_dict:
+        new_dict[num] += 1
+    else:
+        new_dict[num] = 1
+
+print(new_dict.values())
