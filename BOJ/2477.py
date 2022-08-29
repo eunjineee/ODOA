@@ -18,19 +18,21 @@ for _ in range(6):
         jeonche.append([x,y+size])
         y+=size
 jeonche.sort()
-n = 0
-m = 0
 jeonx = []
 jeony = []
-for _ in range(3):
-    jeonx.append(abs(jeonche[n+1][0]-jeonche[n][0]))
-    n += 2
-    jeony.append(abs(jeonche[m+1][1]-jeonche[m][1]))
-    m += 2
+for p in range(6):
+    jeonx.append(jeonche[p][0])
+    jeony.append(jeonche[p][1])
 
 jeonx.sort()
 jeony.sort()
+to = [0, -1]
 
+for i in to:
+    for j in to:
+        if [jeonx[to[i]],jeony[to[j]]] not in jeonche:
+            merong = (jeonx[to[i]],jeony[to[j]])
+            break
 
-total = abs(jeonx[2]) * abs(jeony[2]) - abs(jeonx[2]-jeonx[0]) * abs(jeony[2]-jeony[1])
+total = abs(jeonx[-1]-jeonx[0]) * abs(jeony[-1]-jeony[0]) - abs(jeonx[2]-merong[0]) * abs(jeony[2]-merong[1])
 print(total*n)
