@@ -1,5 +1,9 @@
 a,b,v = map(int,input().split())
-i = 0
+num = 1
+num += (v-a)//(a-b)
+j = (v-a) % (a-b)
 
-if (v-a)%(a-b) != 0:
-    print((v-a)//(a-b)+1)
+if j > 0:
+    num += 1
+
+print(num)
