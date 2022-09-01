@@ -1,22 +1,13 @@
 import sys
-N = int(sys.stdin.readline().rstrip())
+N = int(input())
 
-num = [int(sys.stdin.readline().rstrip()) for _ in range(N)]
+count = [0] * (10000 + 1)
 
-def quick_sort(nums):
-    if len(nums) <= 1:
-        return nums
-    pivot = nums[len(nums) // 2]
-    l,m,e = [], [], []
-    for each in nums:
-        if each < pivot:
-            l.append(each)
-        elif each > pivot:
-            m.append(each)
-        else:
-            e.append(each)
-    return quick_sort(l) + e + quick_sort(m)
-num = quick_sort(num)
+for num in range(N):
+    mm = int(sys.stdin.readline())
+    count[mm] += 1 
 
-for i in num:
-    print(i)
+for n in range(10001):
+    if count[n] != 0:
+        for i in range(count[n]):
+            print(n)
