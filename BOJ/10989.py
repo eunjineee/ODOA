@@ -1,22 +1,22 @@
 import sys
 N = int(sys.stdin.readline().rstrip())
 
-num = [int(sys.stdin.readline().rstrip()) for _ in range(N)]
+arr = [int(sys.stdin.readline().rstrip()) for _ in range(N)]
 
-def quick_sort(nums):
-    if len(nums) <= 1:
-        return nums
-    pivot = nums[len(nums) // 2]
-    l,m,e = [], [], []
-    for each in nums:
-        if each < pivot:
-            l.append(each)
-        elif each > pivot:
-            m.append(each)
-        else:
-            e.append(each)
-    return quick_sort(l) + e + quick_sort(m)
-num = quick_sort(num)
+count = [0] * (max(arr) + 1)
 
-for i in num:
+for num in arr:
+    count[num] += 1
+    
+for i in range(1, len(count)):
+    count[i] += count[i-1]
+
+result = [0] * (len(arr))
+
+for num in arr:
+    idx = count[num]
+    result[idx - 1] = num
+    count[num] -= 1
+
+for i in result:
     print(i)
