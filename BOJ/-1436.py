@@ -1,15 +1,17 @@
 n = int(input())
 a = 666
+b = 0
 
-b = (n-13) // 24 + 1
-c = n % 24
-print(b,c)
+if 5 >= n >= 1:
+    ans = n*1000 + a
+elif 12 >= n >= 6:
+    ans = a*10 + (n-6)
+else:
+    num = (n-12) % 19
+    mnum = (n-12) // 19 + 1
+    if 9 >= num >= 1:
+        ans = str(i+6) + str(a)
+    else:
+        ans = str(mnum)[-1] + str(istr(a)) + str(19-num)  
 
-if 6 >= c >= 0:
-    num = b*10000 + (c-1)*1000 + a
-elif 13 >= c >= 7:
-    num = b*10000 + a*10 + (c-7)
-elif 23 >= c >= 14:
-    num = (b-2)*10000 + (c-13)*1000 + a
-
-print(num)
+print(ans)
