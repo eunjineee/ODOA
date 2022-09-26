@@ -1,25 +1,24 @@
 from collections import deque
 
-def f(z,x,y):
+def f(x,y):
     global ans
-    q.append((z,x,y))
+    q.append((x,y))
     while q:
-        (z,x,y) = q.popleft()
-        d = [(1,0,0),(-1,0,0),(0,1,0),(0,-1,0),(0,0,1),(0,0,-1)]
+        (x,y) = q.popleft()
+        d = [(1,0),(-1,0),(0,1),(0,-1)]
         for dd in d:
-            nz = z + dd[0]
-            nx = x + dd[1]
-            ny = y + dd[2]
+            nx = x + dd[0]
+            ny = y + dd[1]
             # print(f'nz={nz} nx={nx} ny={ny}')
-            if h > nz >= 0 and n > nx >= 0 and m > ny >= 0 and box[nz][nx][ny] == 0:
+            if n > nx >= 0 and m > ny >= 0 and box[nx][ny] == 0:
                 # print(f'실행')
                 box[nz][nx][ny] == 1
                 q.append((nz,nx,ny))
                 ans += 1
 
 
-m,n,h = map(int, input().split())
-box = [list(list(map(int, input().split())) for _ in range(n)) for _ in range(h)]
+m,n = map(int, input().split())
+box = [list(map(int, input().split())) for _ in range(n)]
 q = deque()
 ans = 0
 for hi in range(h):
