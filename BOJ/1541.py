@@ -14,3 +14,7 @@ for i in n:
     else:
         a += i
 print(total)
+
+for j in len(total):
+    if total[j] == '+':
+        total[j-1] + total[j+1]
