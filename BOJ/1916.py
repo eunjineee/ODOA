@@ -17,7 +17,6 @@ def dijkstra(s, V):
         for v in range(V+1):                    # 비용 결정
             if 0 < adjM[w][v] < INF:
                 D[v] = min(D[v], D[w]+adjM[w][v])
-
 INF = 100000
 N = int(input())
 M = int(input())
@@ -27,8 +26,10 @@ for i in range(N+1):
 for _ in range(M):
     u, v, w = map(int, input().split())
     adjM[u][v] = min(adjM[u][v], w)
-start, end = map(int,input().split())
+
+s, e = map(int,input().split())
 D = [0]*(N+1)
-dijkstra(start,end)
+dijkstra(s,N)
 print(D)
-print(D[end])
+print(e)
+print(D[e])
