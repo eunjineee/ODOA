@@ -12,7 +12,6 @@ def powerset(i, k):
         powerset(i+1, k)
         bit[i] = 1
         powerset(i+1, k)
- 
 
 
 n, m = map(int,input().split())
