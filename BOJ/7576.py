@@ -1,8 +1,9 @@
 from collections import deque
+import sys
+input = sys.stdin.readline
 
-def f(x,y):
+def f():
     global ans
-    q.append((x,y))
     while q:
         (x,y) = q.popleft()
         d = [(1,0),(-1,0),(0,1),(0,-1)]
@@ -12,19 +13,28 @@ def f(x,y):
             # print(f'nz={nz} nx={nx} ny={ny}')
             if n > nx >= 0 and m > ny >= 0 and box[nx][ny] == 0:
                 # print(f'실행')
-                box[nz][nx][ny] == 1
-                q.append((nz,nx,ny))
+                box[nx][ny] = box[x][y] + 1
+                q.append((nx,ny))
                 ans += 1
+
 
 
 m,n = map(int, input().split())
 box = [list(map(int, input().split())) for _ in range(n)]
 q = deque()
 ans = 0
-for hi in range(h):
-    for x in range(n):
-        for y in range(m):
-            if box[hi][x][y] == 1:
-                f(hi,x,y)
-                
-print(ans) 
+for x in range(n):
+    for y in range(m):
+        if box[x][y] == 1:
+            q.append((x,y))
+f()
+
+answer = 0
+for i in range(n):
+    for j in range(m):
+        if box[i][j] == 0:
+            print(-1)
+            exit()
+        elif box[i][j] > answer:
+            answer = box[i][j]
+print(answer-1) 
