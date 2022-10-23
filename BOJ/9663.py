@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # x번째 행에 놓은 Queen에 대해서 검증
 def check(x):
     # 이전 행에서 놓았던 모든 Queen들을 확인
@@ -28,3 +29,24 @@ row = [0] * n
 result = 0
 dfs(0)
 print(result)
+=======
+n = int(input())
+
+queen = [0]*n
+
+
+def f(a):
+    global ans
+    queen[a] = 1
+    if a == n:
+        ans += 1
+    else:
+        for j in range(n):
+            if queen[j] == 0:
+                f(j)
+
+ans = 0
+for i in range(n):
+    f(i)
+print(ans)
+>>>>>>> 2a84d7e9530aaf8c23ec97412a5affe040c2223d

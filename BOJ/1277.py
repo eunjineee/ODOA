@@ -25,8 +25,13 @@ plantdi = {}                                            #공장 위치(x,y)를 �
 for i in range(1, plant+1):
     x, y = map(int,input().split())
     plantdi[i] = (x,y)
+<<<<<<< HEAD
 print(f'plantdi:')
 pprint(plantdi)
+=======
+# print(f'plantdi:')
+# pprint(plantdi)
+>>>>>>> 2a84d7e9530aaf8c23ec97412a5affe040c2223d
 
 wiredi = {}
 for j in range(1, plant+1):
@@ -36,8 +41,13 @@ for _ in range(wire):                                  #이미 연결된 공장�
     a, b = map(int, input().split())                   #양방향으로 넣어줘야함***ㅠㅜㅠ
     wiredi[a].append((b,0))
     wiredi[b].append((a,0))
+<<<<<<< HEAD
 print(f'wiredi:')
 pprint(wiredi)
+=======
+# print(f'wiredi:')
+# pprint(wiredi)
+>>>>>>> 2a84d7e9530aaf8c23ec97412a5affe040c2223d
 
 for aa in range(1,plant+1):                            #연결되지 않은 부분은 최대길이를 넘지않을때 추가
     for bb in range(aa+1,plant+1):
@@ -45,13 +55,22 @@ for aa in range(1,plant+1):                            #연결되지 않은 부�
         if wirelen <= minwire:
                 wiredi[aa].append((bb, wirelen))
                 wiredi[bb].append((aa, wirelen))
+<<<<<<< HEAD
 print(f'wiredi:')
 pprint(wiredi)
+=======
+# print(f'wiredi:')
+# pprint(wiredi)
+>>>>>>> 2a84d7e9530aaf8c23ec97412a5affe040c2223d
 
 INF = sys.maxsize
 visited = [INF] * (plant + 1)                           #다익스트라에서 최소 찾기니까 inf로 만들어주기
 
 f(1)
 
+<<<<<<< HEAD
 pprint(visited)
+=======
+# pprint(visited)
+>>>>>>> 2a84d7e9530aaf8c23ec97412a5affe040c2223d
 print(int(visited[plant] * 1000))
