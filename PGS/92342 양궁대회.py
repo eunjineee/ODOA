@@ -1,48 +1,44 @@
-from collections import deque
-def score():   #점수 비교하기
-    apeach_score = 0
-    lion_score = 0
-    for i in range(11):
-        if apeach[i] >= lion[i]:
-            apeach_score += (10-i)
-        else:
-            lion_score += (10-i)
-        
-def ans_find():
-    ans.sort(reverse=True)
-    answer = ans[0]
-
-def 채우기():
-    lion = [0]*(n+1)
-    q = [0,1,2,3,4,5,6,7,8,9,10]
-    p = [-1, 0 , 0]
-    while q:
-        t = q.popleft()
-        for j in range(3):
-            num = lion[t]
-            if to < n and j != 2:
-                num = num + p[j]
-                if 0 < num <=n and total+num <= n:
-                    lion[t] = num
-                    total += num
-            elif to < n and j == 2:
-                num = 0
-
-
-
-
-
+from itertools import combinations_with_replacement
 
 def solution(n, info):
-    ans = []
-
+    lion_nums = list(combinations_with_replacement(range(0,11),n))    #냅다 함수쓰기
+    print(lion_nums)
+    maxcha = float("-inf")
+    answer = [-1]
+    for lion_num in lion_nums:
+        lion = [0] * 11
+        for score in lion_num:           #lion에 어피치 점수(info)와 같은 모양으로 넣어주기
+            lion[10 - score] += 1
         
+        apeach_score = 0
+        lion_score = 0
+        for i in range(11):
+            if info[i] == lion[i] == 0:    #0일때는 지나가기
+                continue
+            elif info[i] >= lion[i]:  
+                apeach_score += (10-i)
+            else:
+                lion_score += (10-i)
 
-
-
-    answer = []
+        if lion_score > apeach_score:          #점수 비교할때, lion_nums가 0이 많은 순서로 만들기 때문에
+            chai = lion_score - apeach_score
+            if chai > maxcha:                  #차이가 가장 큰것을 먼저 answer에 넣어주면 끝까지 가져감
+                maxcha = chai
+                answer = lion
     return answer
 
+# print(solution(5, [2,1,1,1,0,0,0,0,0,0,0]))
 
-
-# solution(5, [2,1,1,1,0,0,0,0,0,0,0])
+# lion_nums = [
+#     (0, 0, 0, 0, 0), 
+#     (0, 0, 0, 0, 1), 
+#     (0, 0, 0, 0, 2), 
+#     (0, 0, 0, 0, 3), 
+#     (0, 0, 0, 0, 4), 
+#     (0, 0, 0, 0, 5), 
+#     (0, 0, 0, 0, 6), 
+#     (0, 0, 0, 0, 7), 
+#     (0, 0, 0, 0, 8), 
+#     (0, 0, 0, 0, 9),
+#     ...
+#     ]
