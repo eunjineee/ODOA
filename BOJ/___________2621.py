@@ -11,6 +11,7 @@ for _ in range(5):
     dic[a][0] += 1
     dic[a][1].append(b)
     numli.append(b)
+
     li[b] += 1
 
 maxnum = 0
@@ -23,17 +24,23 @@ for j in dic.values():
 
 ans = []
 #1
-if max(li) == 5:
-    ans.append(max[li] + 900)
+if maxnum == 5:
+    for l in range(len(li)-1):
+        if li[l] != li[i+1]:
+            break
+    else:
+        ans.append(max[li] + 900)
 #2
 if max(li) == 4:
-    ans.append(max[li] + 800)
+    for d in dic.values():
+        if d[0] == 4:
+            ans.append(max(d[1]) + 800)
 #3
 if max(li) == 3 and min(li) == 2:
     ans.append(li.index(max[li])*10 + li.index(min[li]) +700)
 #4
 if maxnum == 5:
-    ans.append(max[numli] + 600)
+    ans.append(max(numli) + 600)
 #5
 numli.sort()
 for jj in range(4):

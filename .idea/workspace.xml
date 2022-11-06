@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5fda5237-7091-4fac-9f02-cbd443ec75c1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/BOJ/1446++.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BOJ/1446.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BOJ/18352.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BOJ/input.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BOJ/test3.py" beforeDir="false" afterPath="$PROJECT_DIR$/BOJ/test3.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BOJ/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/BOJ/.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BOJ/2621.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BOJ/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/BOJ/input.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PGS/118667 두 큐 합 같게 만들기.py" beforeDir="false" afterPath="$PROJECT_DIR$/PGS/118667 두 큐 합 같게 만들기.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
